@@ -47,12 +47,9 @@ dmypy.json
 
 # DMS-Beautify-Scripts specific: local working / output files (not part of the repo)
 *.mdd
-**/[Tt]est*
-!tests/
-!tests/**
-__pycache__/
-*.py[codz]
 ref.py
-Test.py
 report.*
 examples/
+
+# Real / sensitive test data (never commit)
+tests-real-sensitive-data/
