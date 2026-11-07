@@ -1,11 +1,54 @@
-## Ignore everything in this directory
-# *
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[codz]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+.installed.cfg
+*.egg
+
+# Unit test / coverage reports
+htmlcov/
+.coverage
+.coverage.*
+.pytest_cache/
+.tox/
+.nox/
+.cache
+cover/
+
+# Environments
+.env
+.venv
+venv/
+env/
+ENV/
+
+# IDE / editor
+.vscode/
+.idea/
+.spyproject
+*.swp
+
+# Type checkers / linters
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+.ruff_cache/
+
+# DMS-Beautify-Scripts specific: local working / output files (not part of the repo)
 *.mdd
 **/[Tt]est*
 ref.py
 Test.py
 report.*
-# Except this file
-!.gitignore
-
 examples/
