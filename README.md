@@ -1,5 +1,8 @@
 # DMS-Beautify-Scripts
-Helper scripts to make our work easier
+
+Post-format output scripts. Apply certain transformations.
+
+Helper scripts to make the life of SEs easier.
 
 This worked well for updates in Mailchimp banners (200+ tickets).
 
