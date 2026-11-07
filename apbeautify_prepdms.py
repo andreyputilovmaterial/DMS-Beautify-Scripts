@@ -411,7 +411,7 @@ def main(args):
         contents_working = beautify_working_file(contents_working)
     
     print("Writing results...")
-    out_file_specs_name = '{prev_name}{added_part}'.format(prev_name=inp_file_specs_name,added_part='.beautiful.mrs')
+    out_file_specs_name = '{prev_name}{added_part}'.format(prev_name=inp_file_specs_name,added_part='.f.mrs')
     with open(out_file_specs_name,'w', encoding="utf8") as out_file_specs:
         out_file_specs.write(contents_specs)
     
