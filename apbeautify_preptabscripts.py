@@ -376,7 +376,7 @@ def beautify(textfilecontents):
 
         tables.append(table_scripts_clean)
 
-    return '\n'.join(tables)
+    return ''.join(tables)  # tables are already newline-delimited
 
 
 
