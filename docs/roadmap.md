@@ -8,9 +8,9 @@ Living TODO list. Add ideas freely; triage at the end of each task.
   proper DMS/mrStudio parser (or at least a lexer/tokenizer) so the scripts work
   across projects instead of only the specific shapes they were written for. This
   is the core issue called out in the README.
-- Add a pytest suite under `tests/` (there are no tests today). This requires
-  un-ignoring the `tests/` directory in `.gitignore` (see
-  `docs/project-context.md` Gotchas).
+- Expand the pytest suite under `tests/` (currently one regression test for the
+  `GridSummaryBase` base fix) to cover the rest of the regex transforms in both
+  scripts.
 - Deduplicate the two scripts: they share the same CLI shape, `main()` skeleton,
   and output-naming logic (`*.f.mrs` / `*.upd.mrs`); extract the common parts.
 - Remove dead/leftover code: the large commented-out first `TableSplitter` draft,

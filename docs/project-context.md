@@ -25,6 +25,8 @@ Mailchimp banner updates (200+ tickets).
   `TableSplitter`, normalizes titles/comments/line breaks, and reorders
   `gridsummary`/`tableof` arguments. Stdlib only. Same CLI shape; its
   `beautify_working_file` deliberately raises "not implemented here".
+- `tests/` — pytest suite (with a root `conftest.py` so tests can import the
+  scripts at the repo root).
 - `README.md` — project intro and (negative) status.
 - `docs/` — this file and `roadmap.md`.
 - `.clinerules/` — AI working rules (project context memory, roadmap, design,
@@ -53,10 +55,12 @@ Mailchimp banner updates (200+ tickets).
 
 ## Gotchas
 
-- `.gitignore` contains `**/[Tt]est*`, which also matches a future `tests/`
-  directory. A committed pytest suite will need explicit negations (`!tests/` and
-  `!tests/**`) or a tweak to that pattern (see the testing rule in
-  `.clinerules/03-testing.md`).
+- `.gitignore` contains `**/[Tt]est*`; the committed `tests/` directory is
+  re-included via the `!tests/` and `!tests/**` negations.
+- The `GridSummaryBase` base fix in `apbeautify_preptabscripts.py` has to account
+  for the call being wrapped in string concatenation: the earlier "axis on a
+  separate line" step produces `axis = "" + GridSummaryBase(...) + ""`, so the
+  regex allows an optional `"" + ` prefix and ` + ""` suffix.
 - Both scripts print noisy debug lines (`"beautify_metadata called!"`,
   `"Starting..."`, `"Finished"`, etc.).
 - `apbeautify_preptabscripts.py` keeps a large commented-out first `TableSplitter`

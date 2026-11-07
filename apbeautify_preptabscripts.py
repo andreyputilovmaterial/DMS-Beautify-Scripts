@@ -355,8 +355,8 @@ def beautify(textfilecontents):
 
             # bases for gridsummarybase where missing, where individual bases are hidden and any total bases is not added either
             comment = r'bases for gridsummarybase where missing, where individual bases are hidden and any total bases is not added either'
-            pattern_search = r'\n(\s*?(?:\'\s*?)*?\s*?axis\s*?=\s*?\w+\s*?\(\s*?.*?\s*?,\s*?")("\s*?,\s*?"\s*?true\s*?"\s*?\)\s*?\n)'
-            pattern_replacement = r'\n$1"+iif(APPLY_WEIGHT,"unweightedbase(),","")+"base()$2'
+            pattern_search = r'\n(\s*?(?:\'\s*?)*?\s*?axis\s*?=\s*?(?:\s*?""\s*?\+\s*?)?\w+\s*?\(\s*?.*?\s*?,\s*?")("\s*?,\s*?"\s*?true\s*?"\s*?\)\s*?(?:\s*?\+\s*?"")?\s*?\n)'
+            pattern_replacement = r'\n$1"+iif(APPLY_WEIGHT,"unweightedbase(), ","")+"base(),$2'
             table_scripts_clean = re.sub(pattern_search,re.sub(r'\$([0-9])',r'\\\1',pattern_replacement),table_scripts_clean,flags=re.I|re.DOTALL)
 
             # get rid of stupid getlabel() in table titles
